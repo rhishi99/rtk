@@ -8,6 +8,7 @@ pub mod filter;
 pub mod guard;
 pub mod path_utils;
 pub mod runner;
+pub mod shell;
 pub mod stream;
 pub mod tee;
 pub mod telemetry;
