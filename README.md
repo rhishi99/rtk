@@ -1,3 +1,37 @@
+> ## This is an unofficial Windows build of rtk
+>
+> You are on the `windows-all` branch of a **fork**. It is upstream `develop` (0.42.4) plus eleven Windows fixes that are still open as pull requests against [rtk-ai/rtk](https://github.com/rtk-ai/rtk). It exists so Windows users don't have to wait for those PRs to land.
+>
+> **[Download the prebuilt binary →](https://github.com/rhishi99/rtk/releases/tag/windows-0.42.4)** (unsigned, SHA-256 published on the release page)
+>
+> Or build it yourself:
+>
+> ```powershell
+> git clone --branch windows-all https://github.com/rhishi99/rtk.git
+> cd rtk
+> cargo build --release   # target\release\rtk.exe
+> ```
+>
+> ### What the eleven patches fix
+>
+> | PR | Area | Fix |
+> |----|------|-----|
+> | [#3613](https://github.com/rtk-ai/rtk/pull/3613) | build | send the MinGW linker `--stack`, not MSVC's `/STACK:` |
+> | [#3614](https://github.com/rtk-ai/rtk/pull/3614) | hooks | keep the hook protocol channel free of the setup nag |
+> | [#3615](https://github.com/rtk-ai/rtk/pull/3615) | tests | make the invalid-UTF-8 assertion code-page independent |
+> | [#3616](https://github.com/rtk-ai/rtk/pull/3616) | core | run `ls`, `tree`, and `wc` natively on Windows |
+> | [#3617](https://github.com/rtk-ai/rtk/pull/3617) | discover | handle Windows paths in command and path normalization |
+> | [#3618](https://github.com/rtk-ai/rtk/pull/3618) | core | pick the right shell instead of hardcoding `cmd /C` |
+> | [#3619](https://github.com/rtk-ai/rtk/pull/3619) | hooks | make the hook path work on Windows |
+> | [#3620](https://github.com/rtk-ai/rtk/pull/3620) | discover | classify PowerShell cmdlets |
+> | [#3621](https://github.com/rtk-ai/rtk/pull/3621) | core | let agents silence non-error stderr diagnostics |
+> | [#3622](https://github.com/rtk-ai/rtk/pull/3622) | tests | stop skipping the whole integration suite on Windows |
+> | [#3623](https://github.com/rtk-ai/rtk/pull/3623) | packaging | Windows installer and winget/scoop/chocolatey publishing |
+>
+> Once these merge upstream, a normal rtk release carries the same fixes and this fork stops mattering. Issues with rtk itself belong [upstream](https://github.com/rtk-ai/rtk/issues); issues with these specific patches belong on the pull requests.
+
+---
+
 <p align="center">
   <img src="https://avatars.githubusercontent.com/u/258253854?v=4" alt="RTK - Rust Token Killer" width="500">
 </p>
